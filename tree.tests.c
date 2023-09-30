@@ -28,3 +28,20 @@ int test_initialize_tree() {
 
   return 0;
 }
+
+int test_generate_registration() {
+  initialize_random_seed();
+
+  int i = 0;
+  for (i = 0; i < 10; i++) {
+    int random_number = generate_registration();
+    printf("randon registration %d: %d\n", i, random_number);
+    if (random_number < 10000 || random_number > 99999) {
+      printf("\nTest generate_registration: Failed\n");
+      return 1;
+    }
+  }
+
+  printf("\nTest generate_registration: Passed\n");
+  return 0; // O teste passou
+}
