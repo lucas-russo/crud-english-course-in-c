@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "tree.h"
 
 int is_empty(Node* node) {
@@ -19,4 +20,22 @@ int generate_registration() {
   int upper_bound = 99999;
   int random_number = (rand() % (upper_bound - lower_bound + 1)) + lower_bound;
   return random_number;
+}
+
+Node* create_node(Student student, Node* left, Node* right) {
+    Node* new_node = (Node*)malloc(sizeof(Node));
+    if (!new_node) {
+        perror("Memory allocation error");
+        exit(1);
+    }
+
+    new_node->student.registration = student.registration;
+    strcpy(new_node->student.name, student.name);
+    strcpy(new_node->student.class_level, student.class_level);
+    strcpy(new_node->student.language, student.language);
+
+    new_node->left = left;
+    new_node->right = right;
+
+    return new_node;
 }

@@ -10,6 +10,7 @@ int main(int argc, char* argv[]) {
   run_test("is_empty()", test_is_empty());
   run_test("initialize_tree()", test_initialize_tree());
   run_test("generate_registration()", test_generate_registration());
+  run_test("create_node()", test_create_node());
   
   return 0;
 }

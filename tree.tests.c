@@ -45,3 +45,18 @@ int test_generate_registration() {
   printf("\nTest generate_registration: Passed\n");
   return 0; // O teste passou
 }
+
+int test_create_node() {
+    Student student = {generate_registration(), "Alice", "Advanced", "English"};
+    Node* left = create_node(student, NULL, NULL);
+    Node* right = create_node(student, NULL, NULL);
+    Node* root = create_node(student, left, right);
+
+    if (root == NULL || root->left != left || root->right != right) {
+        printf("Test create_node: Failed\n");
+        return 1; 
+    }
+
+    printf("Test create_node: Passed\n");
+    return 0; 
+}
