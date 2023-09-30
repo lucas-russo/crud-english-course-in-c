@@ -37,7 +37,7 @@ void show_student(Student student);
 int test_search_student(void);
 
 /* Hermano - to do: */
-Node* create_node(Student student,Node* left, Node* right);
+Node* create_node(Student student, Node* left, Node* right);
 int test_create_node(void);
 
 Node* include_student(Node* node, Student student);
