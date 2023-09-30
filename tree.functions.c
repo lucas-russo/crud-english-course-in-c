@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include "tree.h"
 
-int is_empty(Node * node) {
+int is_empty(Node* node) {
   return node == NULL;
 }
 
-Node * initialize_tree() {
+Node* initialize_tree() {
   return NULL;
 }
 
