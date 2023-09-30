@@ -11,6 +11,16 @@ Node* initialize_tree() {
   return NULL;
 }
 
+void free_node(Node* node) {
+    if (node == NULL) {
+        return;
+    }
+
+    free_node(node->left);
+    free_node(node->right);
+    free(node);
+}
+
 void initialize_random_seed() {
   srand(time(NULL));
 }

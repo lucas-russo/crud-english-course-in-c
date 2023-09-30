@@ -18,6 +18,9 @@ int test_is_empty(void);
 Node* initialize_tree(void);
 int test_initialize_tree(void);
 
+void free_node(Node* node);
+int test_free_node();
+
 void initialize_random_seed(void);
 int generate_registration(void);
 int test_generate_registration(void);

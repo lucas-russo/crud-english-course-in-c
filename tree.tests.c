@@ -29,6 +29,38 @@ int test_initialize_tree() {
   return 0;
 }
 
+int test_free_node() {
+    Node* node1 = (Node*)malloc(sizeof(Node));
+    node1->student.registration = 12702;
+    strcpy(node1->student.name, "Alice");
+    strcpy(node1->student.class_level, "Advanced");
+    strcpy(node1->student.language, "English");
+    node1->left = NULL;
+    node1->right = NULL;
+
+    Node* node2 = (Node*)malloc(sizeof(Node));
+    node2->student.registration = 24270;
+    strcpy(node2->student.name, "Bob");
+    strcpy(node2->student.class_level, "Beginner");
+    strcpy(node2->student.language, "Spanish");
+    node2->left = NULL;
+    node2->right = NULL;
+
+    Node* root = (Node*)malloc(sizeof(Node));
+    root->student.registration = 34272;
+    strcpy(root->student.name, "Charlie");
+    strcpy(root->student.class_level, "Intermediate");
+    strcpy(root->student.language, "French");
+    root->left = node1;
+    root->right = node2;
+
+    free_node(root);
+
+    printf("Test free_node: Passed\n");
+    return 0; 
+}
+
+
 int test_generate_registration() {
   initialize_random_seed();
 
