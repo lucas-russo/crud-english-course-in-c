@@ -12,7 +12,7 @@ int test_is_empty() {
   if (is_empty(empty_node)) printf("Test for empty node: Passed\n");
   else printf("Test for empty node: Failed\n");
 
-  if (!is_empty(&node)) printf("Test for not empty node: Passed\n");
+  if (!is_empty( & node)) printf("Test for not empty node: Passed\n");
   else printf("Test for not empty node: Failed\n");
 
   return 0;

@@ -6,7 +6,7 @@ int test_number = 0;
 
 void run_test(char * test_name[25], int test);
 
-int main(int argc, char *argv[]) {
+int main(int argc, char * argv[]) {
   run_test("is_empty()", test_is_empty());
   run_test("initialize_tree()", test_initialize_tree());
   return 0;
