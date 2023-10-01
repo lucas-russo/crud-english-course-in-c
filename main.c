@@ -10,7 +10,7 @@ int run_all_test(void);
 
 int main(int argc, char* argv[]) {
   if (run_all_tests() != 0) exit(1);
-  clear_console();
+  //clear_console();
 
   return 0;
 }
@@ -24,6 +24,7 @@ int run_all_tests() {
   run_test("free_node()", test_free_node());
   run_test("generate_registration()", test_generate_registration());
   run_test("create_node()", test_create_node());
-
+  run_test("include_student()", test_include_student());
+  
   return 0;
 }

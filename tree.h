@@ -40,13 +40,13 @@ int test_search_student(void);
 void show_student(Student student);
 int test_search_student(void);
 
-
-//Hermano DONE
+/* Hermano DONE */
 Node* create_node(Student student, Node* left, Node* right);
 int test_create_node(void);
 
-/* Hermano - to do: */
 Node* include_student(Node* node, Student student);
+void print_student_names(Node* node);
+int is_tree_alphabetical(Node* node);
 int test_include_student(void);
 
 /* Sergio - to do: */

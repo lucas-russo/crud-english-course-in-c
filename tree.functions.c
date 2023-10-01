@@ -42,3 +42,16 @@ Node* create_node(Student student, Node* left, Node* right) {
 
   return new_node;
 }
+
+Node* include_student(Node* node, Student student) {
+  if (!node) return create_node(student, NULL, NULL);
+
+  int comparison = strcmp(student.name, node->student.name);
+
+  if (comparison <= 0)
+    node->left = include_student(node->left, student);
+  else
+    node->right = include_student(node->right, student);
+
+  return node;
+}

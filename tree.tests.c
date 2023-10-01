@@ -157,3 +157,76 @@ int test_create_node() {
   printf("Test create_node: Passed\n");
   return 0;
 }
+
+void print_student_names(Node* node) {
+  if (node == NULL) return;
+
+  print_student_names(node->left);
+  printf("%s\n", node->student.name);
+  print_student_names(node->right);
+}
+
+int is_tree_alphabetical(Node* node) {
+  if (node == NULL) return 1;
+
+  if (node->left != NULL &&
+      strcmp(node->student.name, node->left->student.name) <= 0)
+    return 0;
+
+  if (node->right != NULL &&
+      strcmp(node->student.name, node->right->student.name) >= 0)
+    return 0;
+
+  if (!is_tree_alphabetical(node->left) || !is_tree_alphabetical(node->right))
+    return 0;
+
+  return 1;
+}
+
+int test_include_student(void) {
+  Node* root = initialize_tree();
+
+  Student student1 = {generate_registration(), "Zoe", class_level_types[0],
+                      language_types[2]};
+  Student student2 = {generate_registration(), "Alice", class_level_types[2],
+                      language_types[0]};
+  Student student3 = {generate_registration(), "Charlie", class_level_types[1],
+                      language_types[2]};
+  Student student4 = {generate_registration(), "Yasmine", class_level_types[1],
+                      language_types[0]};
+  Student student5 = {generate_registration(), "Anna", class_level_types[0],
+                      language_types[1]};
+  Student student6 = {generate_registration(), "Bob", class_level_types[1],
+                      language_types[3]};
+  Student student7 = {generate_registration(), "Catherine",
+                      class_level_types[2], language_types[0]};
+  Student student8 = {generate_registration(), "Henry", class_level_types[2],
+                      language_types[1]};
+  Student student9 = {generate_registration(), "Xander", class_level_types[1],
+                      language_types[1]};
+  Student student10 = {generate_registration(), "Zach", class_level_types[2],
+                       language_types[3]};
+
+  root = include_student(root, student1);
+  root = include_student(root, student2);
+  root = include_student(root, student3);
+  root = include_student(root, student4);
+  root = include_student(root, student5);
+  root = include_student(root, student6);
+  root = include_student(root, student7);
+  root = include_student(root, student8);
+  root = include_student(root, student9);
+  root = include_student(root, student10);
+
+  printf("Names inserted in the tree:\n");
+  print_student_names(root);
+  printf("\n");
+
+  if (is_tree_alphabetical(root)) {
+    printf("Test include_student: Passed\n");
+    return 0;
+  } else {
+    printf("Test include_student: Failed\n");
+    return 1;
+  }
+}
