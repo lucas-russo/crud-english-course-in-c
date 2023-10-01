@@ -5,20 +5,20 @@
 #include "constants.h"
 #include "tree.h"
 
-int test_constants(void){
-	int i;
+int test_constants(void) {
+  int i;
 
-    printf("Class Levels:\n");
-    for (i = 0; i < 3; i++) { 
-        printf("%d: %s\n", i, class_level_types[i]);
-    }
+  printf("Class Levels:\n");
+  for (i = 0; i < 3; i++) {
+    printf("%d: %s\n", i, class_level_types[i]);
+  }
 
-    printf("\nLanguages:\n");
-    for (i = 0; i < 4; i++) { 
-        printf("%d: %s\n", i, language_types[i]);
-    }
-    
-	return 0;
+  printf("\nLanguages:\n");
+  for (i = 0; i < 4; i++) {
+    printf("%d: %s\n", i, language_types[i]);
+  }
+
+  return 0;
 }
 
 int test_is_empty() {
