@@ -73,24 +73,24 @@ int test_free_node() {
   Node* node1 = (Node*)malloc(sizeof(Node));
   node1->student.registration = 12702;
   strcpy(node1->student.name, "Alice");
-  strcpy(node1->student.class_level, "Advanced");
-  strcpy(node1->student.language, "English");
+  strcpy(node1->student.class_level, class_level_types[2]);
+  strcpy(node1->student.language, language_types[0]);
   node1->left = NULL;
   node1->right = NULL;
 
   Node* node2 = (Node*)malloc(sizeof(Node));
   node2->student.registration = 24270;
   strcpy(node2->student.name, "Bob");
-  strcpy(node2->student.class_level, "Beginner");
-  strcpy(node2->student.language, "Spanish");
+  strcpy(node2->student.class_level, class_level_types[0]);
+  strcpy(node2->student.language, language_types[1]);
   node2->left = NULL;
   node2->right = NULL;
 
   Node* root = (Node*)malloc(sizeof(Node));
   root->student.registration = 34272;
   strcpy(root->student.name, "Charlie");
-  strcpy(root->student.class_level, "Intermediate");
-  strcpy(root->student.language, "French");
+  strcpy(root->student.class_level, class_level_types[1]);
+  strcpy(root->student.language, language_types[2]);
   root->left = node1;
   root->right = node2;
 
