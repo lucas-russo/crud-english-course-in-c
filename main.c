@@ -11,13 +11,11 @@ int run_all_test(void);
 int main(int argc, char* argv[]) {
   if (run_all_tests() != 0) exit(1);
   clear_console();
-	
+
   return 0;
 }
 
-void clear_console(){
-	system("cls");
-}
+void clear_console() { system("cls"); }
 
 int run_all_tests() {
   run_test("constants", test_constants());
@@ -29,4 +27,3 @@ int run_all_tests() {
 
   return 0;
 }
-
