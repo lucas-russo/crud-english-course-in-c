@@ -4,13 +4,17 @@
 
 #include "constants.h"
 #include "tree.h"
+#include "file.h"
 
 void clear_console(void);
 int run_all_test(void);
 
 int main(int argc, char* argv[]) {
   if (run_all_tests() != 0) exit(1);
-  //clear_console();
+  clear_console();
+  
+  Node * students = initialize_tree();
+  read_file_and_insert_into_tree(students);
 
   return 0;
 }
