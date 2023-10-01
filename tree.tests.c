@@ -23,11 +23,32 @@ int test_constants(void) {
   printf("Class Levels:\n");
   for (i = 0; i < 3; i++) {
     printf("%d: %s\n", i, class_level_types[i]);
+
+    if (strcmp(class_level_types[i], "Beginner") == 0)
+      printf("Class Level is correct: Beginner\n");
+    else if (strcmp(class_level_types[i], "Intermediate") == 0)
+      printf("Class Level is correct: Intermediate\n");
+    else if (strcmp(class_level_types[i], "Advanced") == 0)
+      printf("Class Level is correct: Advanced\n");
+    else
+      printf("Class Level is incorrect\n");
   }
 
   printf("\nLanguages:\n");
   for (i = 0; i < 4; i++) {
     printf("%d: %s\n", i, language_types[i]);
+
+    // Comparar com a string esperada
+    if (strcmp(language_types[i], "English") == 0)
+      printf("Language is correct: English\n");
+    else if (strcmp(language_types[i], "Spanish") == 0)
+      printf("Language is correct: Spanish\n");
+    else if (strcmp(language_types[i], "French") == 0)
+      printf("Language is correct: French\n");
+    else if (strcmp(language_types[i], "Italian") == 0)
+      printf("Language is correct: Italian\n");
+    else
+      printf("Language is incorrect\n");
   }
 
   return 0;
