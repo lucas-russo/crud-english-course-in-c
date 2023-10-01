@@ -18,6 +18,9 @@ int test_is_empty(void);
 Node* initialize_tree(void);
 int test_initialize_tree(void);
 
+void free_node(Node* node);
+int test_free_node();
+
 void initialize_random_seed(void);
 int generate_registration(void);
 int test_generate_registration(void);
@@ -34,7 +37,7 @@ void show_student(Student student);
 int test_search_student(void);
 
 /* Hermano - to do: */
-Node* create_node(Student student,Node* left, Node* right);
+Node* create_node(Student student, Node* left, Node* right);
 int test_create_node(void);
 
 Node* include_student(Node* node, Student student);
