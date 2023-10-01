@@ -118,7 +118,8 @@ int test_generate_registration() {
 }
 
 int test_create_node() {
-  Student student = {generate_registration(), "Alice", "Advanced", "English"};
+  Student student = {generate_registration(), "Alice", class_level_types[2],
+                     language_types[0]};
   Node* left = create_node(student, NULL, NULL);
   Node* right = create_node(student, NULL, NULL);
   Node* root = create_node(student, left, right);
