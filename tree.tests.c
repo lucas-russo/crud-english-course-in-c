@@ -17,6 +17,7 @@ int test_constants(void){
     for (i = 0; i < 4; i++) { 
         printf("%d: %s\n", i, language_types[i]);
     }
+    
 	return 0;
 }
 
