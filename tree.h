@@ -11,6 +11,8 @@ typedef struct tree_node {
   struct tree_node* left;
 } Node;
 
+int test_constants(void);
+
 /* DONE */
 int is_empty(Node* node);
 int test_is_empty(void);
