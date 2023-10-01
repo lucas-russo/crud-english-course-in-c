@@ -11,9 +11,11 @@ typedef struct tree_node {
   struct tree_node* left;
 } Node;
 
+/* DONE */
+void run_test(char* test_name[25], int test);
+
 int test_constants(void);
 
-/* DONE */
 int is_empty(Node* node);
 int test_is_empty(void);
 
@@ -38,10 +40,12 @@ int test_search_student(void);
 void show_student(Student student);
 int test_search_student(void);
 
-/* Hermano - to do: */
+
+//Hermano DONE
 Node* create_node(Student student, Node* left, Node* right);
 int test_create_node(void);
 
+/* Hermano - to do: */
 Node* include_student(Node* node, Student student);
 int test_include_student(void);
 

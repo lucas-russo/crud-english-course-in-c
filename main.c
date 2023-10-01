@@ -5,11 +5,21 @@
 #include "constants.h"
 #include "tree.h"
 
-int test_number = 0;
-
-void run_test(char* test_name[25], int test);
+void clear_console(void);
+int run_all_test(void);
 
 int main(int argc, char* argv[]) {
+  if (run_all_tests() != 0) exit(1);
+  clear_console();
+	
+  return 0;
+}
+
+void clear_console(){
+	system("cls");
+}
+
+int run_all_tests() {
   run_test("constants", test_constants());
   run_test("is_empty()", test_is_empty());
   run_test("initialize_tree()", test_initialize_tree());
@@ -20,12 +30,3 @@ int main(int argc, char* argv[]) {
   return 0;
 }
 
-void run_test(char* test_name[25], int test) {
-  test_number++;
-  printf("\nTEST %d -> %s ", test_number, test_name);
-  if (test == 0)
-    printf(
-        "run with out problems\n\n - - - - - - - - - - - - - - - - - - - - - - "
-        "- - - - - - - - - \n\n");
-  sleep(1);
-}

@@ -5,6 +5,18 @@
 #include "constants.h"
 #include "tree.h"
 
+int test_number = 0;
+
+void run_test(char* test_name[25], int test) {
+  test_number++;
+  printf("\nTEST %d -> %s ", test_number, test_name);
+  if (test == 0)
+    printf(
+        "run with out problems\n\n - - - - - - - - - - - - - - - - - - - - - - "
+        "- - - - - - - - - \n\n");
+  sleep(1);
+}
+
 int test_constants(void) {
   int i;
 
