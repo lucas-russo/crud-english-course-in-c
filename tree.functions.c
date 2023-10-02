@@ -9,12 +9,12 @@ int is_empty(Node* node) { return node == NULL; }
 
 Node* initialize_tree() { return NULL; }
 
-void free_node(Node* node) {
-  if (node == NULL) return;
+void free_tree(Node* root) {
+  if (root == NULL) return;
 
-  free_node(node->left);
-  free_node(node->right);
-  free(node);
+  free_tree(root->left);
+  free_tree(root->right);
+  free(root);
 }
 
 void initialize_random_seed() { srand(time(NULL)); }

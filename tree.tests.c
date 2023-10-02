@@ -90,7 +90,7 @@ int test_initialize_tree() {
   return 0;
 }
 
-int test_free_node() {
+int test_free_tree() {
   Node* node1 = (Node*)malloc(sizeof(Node));
   node1->student.registration = 12702;
   strcpy(node1->student.name, "Alice");
@@ -116,7 +116,7 @@ int test_free_node() {
   root->left = node1;
   root->right = node2;
 
-  free_node(root);
+  free_tree(root);
 
   printf("Test free_node: Passed\n");
   return 0;
@@ -156,7 +156,7 @@ int test_create_node() {
     return 1;
   }
 
-  free_node(root);
+  free_tree(root);
 
   printf("Test create_node: Passed\n");
   return 0;
@@ -278,6 +278,7 @@ int test_include_student(void) {
 
   if (is_tree_alphabetical(root)) {
     printf("Test include_student: Passed\n");
+    free_tree(root);
     return 0;
   } else {
     printf("Test include_student: Failed\n");
