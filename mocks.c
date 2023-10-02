@@ -14,7 +14,7 @@ Student student8;
 Student student9;
 Student student10;
 
-void initialize_students() {
+void initialize_students_mocks() {
   student1.registration = generate_registration();
   strncpy(student1.name, "Zoe", sizeof(student1.name));
   strncpy(student1.class_level, class_level_types[0],
@@ -74,4 +74,17 @@ void initialize_students() {
   strncpy(student10.class_level, class_level_types[2],
           sizeof(student10.class_level));
   strncpy(student10.language, language_types[3], sizeof(student10.language));
+}
+
+void free_all_students_mocks() {
+  memset(&student1, 0, sizeof(Student));
+  memset(&student2, 0, sizeof(Student));
+  memset(&student3, 0, sizeof(Student));
+  memset(&student4, 0, sizeof(Student));
+  memset(&student5, 0, sizeof(Student));
+  memset(&student6, 0, sizeof(Student));
+  memset(&student7, 0, sizeof(Student));
+  memset(&student8, 0, sizeof(Student));
+  memset(&student9, 0, sizeof(Student));
+  memset(&student10, 0, sizeof(Student));
 }
