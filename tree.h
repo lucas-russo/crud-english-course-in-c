@@ -27,7 +27,6 @@ void initialize_random_seed(void);
 int generate_registration(void);
 int test_generate_registration(void);
 
-/* Arante - to do: */
 void list_all_students(Node* node);
 int test_list_all_students(void);
 
