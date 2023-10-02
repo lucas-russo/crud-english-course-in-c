@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "constants.h"
 #include "tree.h"
 
@@ -31,17 +30,17 @@ void list_all_students(Node* node) {
         return;
     }
 
-    // Recursivamente, imprime os estudantes na sub·rvore esquerda
+    // Recursivamente, imprime os estudantes na sub√°rvore esquerda
     list_all_students(node->left);
 
-    // Imprime as informaÁıes do aluno no formato especificado
+    // Imprime as informa√ß√µes do aluno no formato especificado
     printf("Student (%d): %s - Level: %s - Language: %s\n",
            node->student.registration,
            node->student.name,
            node->student.class_level,
            node->student.language);
 
-    // Recursivamente, imprime os estudantes na sub·rvore direita
+    // Recursivamente, imprime os estudantes na sub√°rvore direita
     list_all_students(node->right);
 }
 
@@ -79,3 +78,25 @@ Node* include_student(Node* node, Student student) {
 
   return node;
 }
+
+Node* search_student(Node* node, const char* name) {
+    if (node == NULL) {
+        return NULL; // Aluno n√£o encontrado
+    }
+
+    int comparison = strcmp(name, node->student.name);
+
+    if (comparison == 0) {
+        return node; // Aluno encontrado
+    } else if (comparison < 0) {
+        return search_student(node->left, name); // Procurar na sub√°rvore esquerda
+    } else {
+        return search_student(node->right, name); // Procurar na sub√°rvore direita
+    }
+}
+
+void show_student(Student student) {
+    printf("Registration: %d\nName: %s\nLevel: %s\nLanguage: %s\n",
+           student.registration, student.name, student.class_level, student.language);
+}
+
