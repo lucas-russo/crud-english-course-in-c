@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "constants.h"
 #include "tree.h"
 
 int is_empty(Node* node) { return node == NULL; }
@@ -32,11 +33,15 @@ Node* create_node(Student student, Node* left, Node* right) {
     exit(1);
   }
 
-  new_node->student.registration = student.registration;
-  strcpy(new_node->student.name, student.name);
-  strcpy(new_node->student.class_level, student.class_level);
-  strcpy(new_node->student.language, student.language);
+  Student new_student;
 
+  new_student.registration = generate_registration;
+  strncpy(new_student.name, student.name, sizeof(new_student.name));
+  strncpy(new_student.class_level, student.class_level,
+          sizeof(new_student.class_level));
+  strncpy(new_student.language, student.language, sizeof(new_student.language));
+
+  new_node->student = new_student;
   new_node->left = left;
   new_node->right = right;
 
