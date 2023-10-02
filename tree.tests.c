@@ -166,8 +166,6 @@ void print_student_names(Node* node) {
   if (node == NULL) return;
   print_student_names(node->left);
   printf("%s\n", node->student.name);
-  printf("%s\n", node->student.class_level);
-  printf("%s\n", node->student.language);
   print_student_names(node->right);
 }
 
