@@ -118,7 +118,7 @@ int test_free_tree() {
 
   free_tree(root);
 
-  printf("Test free_node: Passed\n");
+  printf("Test free_tree: Passed\n");
   return 0;
 }
 
