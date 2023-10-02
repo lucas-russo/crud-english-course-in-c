@@ -37,8 +37,7 @@ Node* read_file_and_insert_into_tree(Node* root) {
   fclose(file);
 
   if (!is_tree_alphabetical(root)) exit(1);
-  printf("REGISTERED STUDENTS: \n\n");
-  list_all_students(root);
-
+printf("SYSTEM LOADED SUCCESSFULLY\n");
+sleep(2);
   return root;
 }
