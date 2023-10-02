@@ -38,7 +38,7 @@ Node* read_file_and_insert_into_tree(Node* root) {
 
   if (!is_tree_alphabetical(root)) exit(1);
   printf("REGISTERED STUDENTS: \n\n");
-  print_student_names(root);
+  list_all_students(root);
 
   return root;
 }

@@ -26,6 +26,25 @@ int generate_registration() {
   return random_number;
 }
 
+void list_all_students(Node* node) {
+    if (node == NULL) {
+        return;
+    }
+
+    // Recursivamente, imprime os estudantes na subárvore esquerda
+    list_all_students(node->left);
+
+    // Imprime as informações do aluno no formato especificado
+    printf("Student (%d): %s - Level: %s - Language: %s\n",
+           node->student.registration,
+           node->student.name,
+           node->student.class_level,
+           node->student.language);
+
+    // Recursivamente, imprime os estudantes na subárvore direita
+    list_all_students(node->right);
+}
+
 Node* create_node(Student student, Node* left, Node* right) {
   Node* new_node = (Node*)malloc(sizeof(Node));
   if (!new_node) {
@@ -35,7 +54,7 @@ Node* create_node(Student student, Node* left, Node* right) {
 
   Student new_student;
 
-  new_student.registration = generate_registration;
+  new_student.registration = student.registration;
   strncpy(new_student.name, student.name, sizeof(new_student.name));
   strncpy(new_student.class_level, student.class_level,
           sizeof(new_student.class_level));
