@@ -2,6 +2,7 @@
 #define MOCKS_H
 
 #include "tree.h"
+#include "constants.h"
 
 extern Student student1;
 extern Student student2;
