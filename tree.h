@@ -14,8 +14,6 @@ typedef struct tree_node {
 /* DONE */
 void run_test(char* test_name[25], int test);
 
-int test_constants(void);
-
 int is_empty(Node* node);
 int test_is_empty(void);
 

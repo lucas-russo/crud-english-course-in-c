@@ -29,6 +29,7 @@ int run_all_tests() {
   run_test("generate_registration()", test_generate_registration());
   run_test("create_node()", test_create_node());
   run_test("include_student()", test_include_student());
+  run_test("list_all_students()", test_list_all_students());
   
   return 0;
 }
