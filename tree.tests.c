@@ -283,3 +283,37 @@ int test_include_student(void) {
     return 1;
   }
 }
+
+int test_list_all_students(void) {
+  Node* root = NULL;
+
+  Student student1;
+  student1.registration = generate_registration();
+  strncpy(student1.name, "Zoe", sizeof(student1.name));
+  strncpy(student1.class_level, class_level_types[0],
+          sizeof(student1.class_level));
+  strncpy(student1.language, language_types[2], sizeof(student1.language));
+
+  Student student2;
+  student2.registration = generate_registration();
+  strncpy(student2.name, "Alice", sizeof(student2.name));
+  strncpy(student2.class_level, class_level_types[2],
+          sizeof(student2.class_level));
+  strncpy(student2.language, language_types[0], sizeof(student2.language));
+
+  Student student3;
+  student3.registration = generate_registration();
+  strncpy(student3.name, "Charlie", sizeof(student3.name));
+  strncpy(student3.class_level, class_level_types[1],
+          sizeof(student3.class_level));
+  strncpy(student3.language, language_types[2], sizeof(student3.language));
+
+  root = include_student(root, student1);
+  root = include_student(root, student2);
+  root = include_student(root, student3);
+
+  list_all_students(root);
+
+  printf("Test list_all_students_simple: Passed\n");
+  return 0;
+}
